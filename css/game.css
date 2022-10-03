@@ -1,21 +1,46 @@
+main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    align-items: center;
+    background-image: url('../img/walpaper.jpg');
+    background-size: cover;
+    justify-content: center;
+    padding: 20px 20px 50px;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(255,215,00.8);
+    width: 100%;
+    max-width: 800px;
+    padding: 30px;
+    margin: 0 0 30px ;
+    border-radius: 5px;
+
+}
 .grid{
     display: grid;
     grid-template-columns: repeat(5,1fr);
     gap: 15px;
     width: 100%;
     max-width: 800px;
-    margin: 100px auto;
+    margin: 0 auto;
 
 }
 
 .card{
     aspect-ratio: 3/4;
     width: 100%;
-    /*background-color: #333;*/
+    background-color: #333;
     border-radius: 5px;
     position: relative;
     transition: all 400ms  ease;
     transform-style: preserve-3d;
+    background-color:  #333;
     
 }
 

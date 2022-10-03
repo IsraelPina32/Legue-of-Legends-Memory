@@ -1,4 +1,6 @@
 const grid = document.querySelector('.grid');
+const spanPlayer  = document.querySelector('.player');
+const time = document.querySelector('.time');
 
 const characters = [
     'Katarina',
@@ -29,7 +31,8 @@ const checkEndGame = () => {
     const disableCards = document.querySelectorAll('.disable-card')
 
     if(disableCards.length === 26){
-        alert("Parabéns,você está no Diamante do jogo do Memoria!!!")
+        clearInterval(this.loop);
+        alert(`Parabéns ${spanPlayer.innerHTML},você está no CHALLENGER do jogo da Memoria!!!, seu time foi de:${time.innerHTML}.foi melhor que o Brrt jogando de rato no mundial!!`)
     }
 } 
 
@@ -59,11 +62,6 @@ const checkCards = () => {
 
     }
 }
-
-
-
-
-
 
 const revealCard = ({ target }) => {
 
@@ -115,4 +113,19 @@ const LoadGame = () => {
         grid.appendChild(card);
     });
 }
-LoadGame();
+
+const starTimer = () =>{
+   this.loop = setInterval(() => {
+        const currenTime = +time.innerHTML;
+        time.innerHTML = currenTime + 1;
+
+    }, 1000);
+}
+
+window.onload = () =>{
+
+    spanPlayer.innerHTML = localStorage.getItem('player');
+    starTimer();
+    LoadGame();
+}
+
